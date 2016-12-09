@@ -1,0 +1,1 @@
+# asobi_auto_mecab
