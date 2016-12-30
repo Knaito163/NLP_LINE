@@ -6,6 +6,9 @@ from urllib.request import urlopen
 #import numpy as np
 import pandas as pd
 
+
+file_name = sys.argv[1]
+
 # stopワードの除去
 stopword_path = "http://svn.sourceforge.jp/svnroot/slothlib/CSharp/Version1/SlothLib/NLP/Filter/StopWord/word/Japanese.txt"
 stopword_file = urlopen(stopword_path)
@@ -15,13 +18,13 @@ for line in stopword_file:
   if(stopwords != u""):
     stopwords_list.append(stopwords)
 # 個人的な除去したいストップワード
-private_stopword = ["。", "、"]
+private_stopword = ["。", "、",""]
 for ps in private_stopword:
   stopwords_list.append(ps)
 print(stopwords_list)
 
 word_dict = {}
-f = open("wakati_text_ex2.txt","r")
+f = open(file_name, "r")
 for line in f:
   word = line.split()
   for w in word:
