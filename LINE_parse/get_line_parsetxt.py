@@ -4,11 +4,6 @@ import sys
 import os
 import re
 
-def checkFunc(c_list):
-  no_list = ["グループ通話が終了しました。\n", "[動画]\n", '[スタンプ]\n', '[ファイル]\n', '[アルバム]\n', "☎ chat.message.groupcall.started.long\n","[ノート]\n"]
-  return False
-
-
 # argv[1]でtextが入ってるinputフォルダ名を入力
 folder_name = sys.argv[1]
 # textファイルのpathをとってくる
