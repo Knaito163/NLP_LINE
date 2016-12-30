@@ -31,9 +31,8 @@ for path in path_list:
         for i in range(2,len(l)):
           wf.write(l[i])
     elif(len(l)==2):
-      if(l[1].endswith('参加しました。\n')!=True and l[1].endswith('招待しました。\n')!=True and l[1].endswith('退出しました。\n')!=True and l[1].endswith('削除しました。\n')!=True and l[1].endswith('変更しました。\n')!=True and l[1].endswith('退会しました。\n')!=True):
+      if(l[1].endswith('参加しました。\n')!=True and l[1].endswith('招待しました。\n')!=True and l[1].endswith('退出しました。\n')!=True and l[1].endswith('削除しました。\n')!=True and l[1].endswith('変更しました。\n')!=True and l[1].endswith('退会しました。\n')!=True and l[1].endswith('グループ通話が終了しました。\n')!=True):
         for i in range(1,len(l)):
-          print(i, l[i])
           wf.write(l[i])
     elif(len(l)==1):
       for i in range(1,len(l)):
