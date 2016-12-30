@@ -32,12 +32,15 @@ for path in path_list:
   for line in f:
     l = re.split('[\t]',line)
     if(len(l)>2):
-      if(l[2]!='[写真]\n' and l[2]!='[動画]\n' and l[2]!='[スタンプ]\n' and l[2]!='[ファイル]\n' and l[2].startswith('[アルバム]')!=True):
+      if(l[2]!='[写真]\n' and l[2]!='[動画]\n' and l[2]!='[スタンプ]\n' and l[2]!='[ファイル]\n' and l[2].startswith('[アルバム]')!=True and l[2].startswith('[ノート]')!=True):
         for i in range(2,len(l)):
+          wf.write(l[i])
+    elif(len(l)==2):
+      if(l[1].endswith('参加しました。\n')!=True and l[1].endswith('招待しました。\n')!=True and l[1].endswith('退出しました。\n')!=True and l[1].endswith('削除しました。\n')!=True and l[1].endswith('変更しました。\n')!=True and l[1].endswith('退会しました。\n')!=True):
+        for i in range(1,len(l)):
           print(i, l[i])
           wf.write(l[i])
-    elif(len(l)<=2):
+    elif(len(l)==1):
       for i in range(1,len(l)):
-          print(i, l[i])
           wf.write(l[i])
   j += 1
