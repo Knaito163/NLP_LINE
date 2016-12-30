@@ -15,7 +15,7 @@ folder_name = sys.argv[1]
 path_list = glob.glob(folder_name+'/*.txt')
 
 
-output_folder = "LINES_sentence_out"
+output_folder = folder_name + "_out"
 if os.path.isdir(output_folder)==False:
   os.system("mkdir "+ output_folder)
 else:
@@ -26,7 +26,7 @@ cut_target = "\n"
 j = 1
 for path in path_list:
   f = open(path, "r")
-  w_path = output_folder+"/" + path.rstrip(".txt").lstrip(folder_name+"/")
+  w_path = output_folder+"/" + path.rstrip(".txt").lstrip(folder_name+"/").lstrip("[LINE] ").replace("(", "_", 2).replace(")", "_", 2)
   w_path += "_lineout"+ str(j) +".txt"
   wf = open(w_path, "a")
   for line in f:
