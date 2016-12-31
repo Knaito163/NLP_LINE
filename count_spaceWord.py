@@ -22,11 +22,13 @@ for line in stopword_file:
   stopwords = line.decode("utf-8").strip()
   if(stopwords != u""):
     stopwords_list.append(stopwords)
-# 個人的な除去したいストップワード
-private_stopword = ["。", "、","て","た","の","に",'"',"か","し","と","ます","ね","は","を","だ","な","が","で","も","ない","よ","ん","です","ー","てる","う","たら","じ","（","）","〜","や","けど","い","ので","とか","ある","さ","なら","する",".","^","%","ば","ござい"]
-for ps in private_stopword:
+# 個人的な除去したいストップワードを自作辞書txtから読み込む
+pf = open("privateStopDict.txt","r").read()
+pfwordlist = pf.split(" ")
+# print(pfwordlist)
+for ps in pfwordlist:
   stopwords_list.append(ps)
-# print(stopwords_list)
+# print(pfwordlist)
 
 word_dict = {}
 f = open(file_name, "r")
