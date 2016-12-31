@@ -10,10 +10,11 @@ folder_name = sys.argv[1]
 path_list = glob.glob(folder_name+'/*.txt')
 
 #outputフォルダ作成
-output_folder = folder_name +"_mecab_wakati"
-os.system("mkdir "+ output_folder)
+output_folder = folder_name +"_mecabwakati"
+if os.path.isdir(output_folder)==False:
+  os.system("mkdir "+ output_folder)
 
-# すべての記事を音声ファイルへ変換してoutputフォルダに出力
+# すべてのparseしたLINEtxtをmecabで分かち書きしたファイルへ変換して出力
 for path in path_list:
   cut_target = "/"
   f = path.split(cut_target)

@@ -1,8 +1,7 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import glob
 import sys
 import os
-
 
 
 # argv[1]でtextが入ってるinputフォルダ名を入力
@@ -11,10 +10,10 @@ folder_name = sys.argv[1]
 path_list = glob.glob(folder_name+'/*.txt')
 
 #outputフォルダ作成
-output_folder = folder_name +"_mecab"
+output_folder = folder_name + "_mecab"
 os.system("mkdir "+ output_folder)
 
-# すべての記事を音声ファイルへ変換してoutputフォルダに出力
+# すべての記事をmecabで変換してoutputフォルダに出力
 for path in path_list:
   cut_target = "/"
   f = path.split(cut_target)

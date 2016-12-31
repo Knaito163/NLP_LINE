@@ -23,7 +23,7 @@ for line in stopword_file:
   if(stopwords != u""):
     stopwords_list.append(stopwords)
 # 個人的な除去したいストップワード
-private_stopword = ["。", "、","て","た","の","に",'"',"か","し","と","ます","ね","は","を","だ","な","が"]
+private_stopword = ["。", "、","て","た","の","に",'"',"か","し","と","ます","ね","は","を","だ","な","が","で","も","ない","よ","ん","です","ー","てる","う","たら","じ","（","）","〜","や","けど","い","ので","とか","ある","さ","なら","する",".","^","%","ば","ござい"]
 for ps in private_stopword:
   stopwords_list.append(ps)
 # print(stopwords_list)
